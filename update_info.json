@@ -1,5 +1,5 @@
 {
-    "version": "1.1.0",
+    "version": "1.0",
     "update_url": "https://example.com/update_v1.1.0.zip",
     "whats_new": "This update includes several bug fixes and improvements."
 }
