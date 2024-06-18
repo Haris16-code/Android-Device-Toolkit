@@ -1,5 +1,5 @@
 {
     "version": "1.2",
-    "update_url": "https://github.com/pbatard/rufus/releases/download/v4.5/rufus-4.5.exe",
+    "update_url": "https://github.com/Haris16-code/Android-Device-Toolkit/raw/main/Android_Device_Toolkit.exe",
     "whats_new": "This update includes new commands These commands are added Reset Battery Stats without root. and also add Reboot into recovery without root and turn on and off android device using this tool, and bug fixes"
 }
