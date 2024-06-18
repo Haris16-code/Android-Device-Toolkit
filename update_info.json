@@ -1,5 +1,5 @@
 {
     "version": "1.2",
-    "update_url": "https://github.com/pbatard/rufus/releases/download/v4.5/rufus-4.5.exe",
+    "update_url": "https://download848.mediafire.com/lfc4qv499xxgiBvkX1fv-bTi6pI66lxZENwCvztP7tsoAMg7a05Hzw8qUnHavaLXqA1_jV-Nsskrznm7PFh4YV3EW-2-0QDcaBaqmnCoCjO7ifzwofu09o9oWPr7xiSxh4iDbpBiPfZhK5pvyhe5o_IxmS4lbPyiqvmR41SX7zdSOQ/u6t6gm69xus7zf0/TEST.exe",
     "whats_new": "This update includes new commands These commands are added Reset Battery Stats without root. and also add Reboot into recovery without root and turn on and off android device using this tool, and bug fixes"
 }
