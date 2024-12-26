@@ -1,6 +1,6 @@
 {
     "version": "1.3",
-    "update_url": "https://github.com/Haris16-code/Android-Device-Toolkit/releases/download/v1.2/Android_Device_Toolkit_v1.2.exe",
+    "update_url": "https://github.com/Haris16-code/Android-Device-Toolkit/releases/download/v1.3/Android_Device_Toolkit_v1.3_64bit.zip",
     "whats_new": "This update includes One-Click ADB Installation New Features Like Open Browser: Open default browser on Android device. Open Camera: Open default camera app on Android device. Check Device Serial No: Retrieve device serial number. Reset Battery stats: Reset device battery statistics Get Device Bug Report: Generate bug report for troubleshooting"
 }
                     
