@@ -1,5 +1,6 @@
 {
-    "version": "1.2",
+    "version": "1.3",
     "update_url": "https://github.com/Haris16-code/Android-Device-Toolkit/releases/download/v1.2/Android_Device_Toolkit_v1.2.exe",
-    "whats_new": "This update includes new commands These commands are added Reset Battery Stats without root. and also add Reboot into recovery without root and turn on and off android device using this tool and you open your calculator and contacts directly from this tool, and bug fixes"
+    "whats_new": "This update includes One-Click ADB Installation New Features Like Open Browser: Open default browser on Android device. Open Camera: Open default camera app on Android device. Check Device Serial No: Retrieve device serial number. Reset Battery stats: Reset device battery statistics Get Device Bug Report: Generate bug report for troubleshooting"
 }
+                    
