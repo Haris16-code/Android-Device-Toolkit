@@ -2,7 +2,7 @@ __bionic_open_tzdata: couldn't find any tzdata when looking for localtime!
 __bionic_open_tzdata: couldn't find any tzdata when looking for GMT!
 __bionic_open_tzdata: couldn't find any tzdata when looking for posixrules!
 Starting TWRP 2.8.5.0 on Thu Jan  1 00:00:18 1970
- (pid 198)
+ (pid 199)
 TW_NO_REBOOT_BOOTLOADER := true
 RECOVERY_SDCARD_ON_DATA := true
 TW_NO_USB_STORAGE := true
@@ -67,7 +67,7 @@ Partition Logs:
    Fstab_File_System: auto
    Backup_Method: files
 
-/system | /dev/block/mmcblk0p15 | Size: 1375MB Used: 21MB Free: 1354MB Backup Size: 21MB
+/system | /dev/block/mmcblk0p15 | Size: 1375MB Used: 452MB Free: 923MB Backup Size: 452MB
    Flags: Can_Be_Mounted Can_Be_Wiped Can_Be_Backed_Up Wipe_Available_in_GUI IsPresent 
    Primary_Block_Device: /dev/block/mmcblk0p15
    Display_Name: System
@@ -119,7 +119,7 @@ Partition Logs:
    Fstab_File_System: emmc
    Backup_Method: dd
 
-/sdcard | /dev/block/mmcblk1p1 | Size: 7675MB Used: 4294MB Free: 3380MB Backup Size: 4294MB
+/sdcard | /dev/block/mmcblk1p1 | Size: 7675MB Used: 4542MB Free: 3132MB Backup Size: 4542MB
    Flags: Can_Be_Mounted Can_Be_Wiped Wipe_Available_in_GUI Removable IsPresent Is_Storage 
    Primary_Block_Device: /dev/block/mmcblk1p1
    Alternate_Block_Device: /dev/block/mmcblk1
@@ -366,14 +366,16 @@ mtppipe add storage 65537 '/data/media/0'
 MtpStorage id: 65537 path: /data/media/0
 mtppipe add storage 65538 '/sdcard'
 MtpStorage id: 65538 path: /sdcard
+I:Set page: 'wipe'
 MtpServer::run fd: 48
 E:request read returned -1, errno: 22, exiting MtpServer::run loop
 MtpServer::run fd: 47
 E:request read returned -1, errno: 22, exiting MtpServer::run loop
-I:Set page: 'wipe'
+I:Set page: 'advancedwipe'
 MtpServer::run fd: 47
 E:request read returned -1, errno: 22, exiting MtpServer::run loop
-I:Set page: 'advancedwipe'
+MtpServer::run fd: 47
+E:request read returned -1, errno: 22, exiting MtpServer::run loop
 MtpServer::run fd: 47
 E:request read returned -1, errno: 22, exiting MtpServer::run loop
 MtpServer::run fd: 47
@@ -397,19 +399,16 @@ Cleaned: /data/dalvik-cache...
 
 I:wipe_path '/data'
 Wiping data without wiping /data/media ...
-I:Unable to unlink '/data/detect.data'
 I:Unable to unlink '/data/bugreports'
 I:Unable to unlink '/data/cust'
 Done.
 I:Get_Max_FileSize::maxFileSize: 17592186044416
 I:sending message to add 65537 '/data/media/0' 'Internal Storage'
+I:Message sent, add storage ID: 65537
+I:wipe_path '/cache'
 mtppipe add storage 65537 '/data/media/0'
 MtpStorage id: 65537 path: /data/media/0
 E:MtpServer::addStorage Storage for storage ID 65537 already exists.
-I:Message sent, add storage ID: 65537
-I:wipe_path '/cache'
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
 MtpServer::run fd: 47
 E:request read returned -1, errno: 22, exiting MtpServer::run loop
 MtpServer::run fd: 47
@@ -454,6 +453,8 @@ MtpServer::run fd: 47
 E:request read returned -1, errno: 22, exiting MtpServer::run loop
 MtpServer::run fd: 47
 E:request read returned -1, errno: 22, exiting MtpServer::run loop
+MtpServer::run fd: 47
+E:request read returned -1, errno: 22, exiting MtpServer::run loop
 Updating partition details...
 I:Data backup size is 0MB, free: 2006MB.
 ...done
@@ -465,13 +466,15 @@ MtpServer::run fd: 47
 E:request read returned -1, errno: 22, exiting MtpServer::run loop
 MtpServer::run fd: 47
 E:request read returned -1, errno: 22, exiting MtpServer::run loop
+MtpServer::run fd: 47
+E:request read returned -1, errno: 22, exiting MtpServer::run loop
 I:Set page: 'clear_vars'
 I:Set page: 'advancedwipe'
 MtpServer::run fd: 47
 E:request read returned -1, errno: 22, exiting MtpServer::run loop
+I:Set page: 'wipe'
 MtpServer::run fd: 47
 E:request read returned -1, errno: 22, exiting MtpServer::run loop
-I:Set page: 'wipe'
 MtpServer::run fd: 47
 E:request read returned -1, errno: 22, exiting MtpServer::run loop
 I:Set page: 'main'
@@ -490,7 +493,39 @@ MtpServer::run fd: 47
 E:request read returned -1, errno: 22, exiting MtpServer::run loop
 MtpServer::run fd: 47
 E:request read returned -1, errno: 22, exiting MtpServer::run loop
+MtpServer::run fd: 47
+E:request read returned -1, errno: 22, exiting MtpServer::run loop
+MtpServer::run fd: 47
+E:request read returned -1, errno: 22, exiting MtpServer::run loop
+MtpServer::run fd: 47
+E:request read returned -1, errno: 22, exiting MtpServer::run loop
+MtpServer::run fd: 47
+E:request read returned -1, errno: 22, exiting MtpServer::run loop
 I:Set page: 'flash_confirm'
+MtpServer::run fd: 47
+E:request read returned -1, errno: 22, exiting MtpServer::run loop
+MtpServer::run fd: 47
+E:request read returned -1, errno: 22, exiting MtpServer::run loop
+MtpServer::run fd: 47
+E:request read returned -1, errno: 22, exiting MtpServer::run loop
+MtpServer::run fd: 47
+E:request read returned -1, errno: 22, exiting MtpServer::run loop
+MtpServer::run fd: 47
+E:request read returned -1, errno: 22, exiting MtpServer::run loop
+MtpServer::run fd: 47
+E:request read returned -1, errno: 22, exiting MtpServer::run loop
+MtpServer::run fd: 47
+E:request read returned -1, errno: 22, exiting MtpServer::run loop
+MtpServer::run fd: 47
+E:request read returned -1, errno: 22, exiting MtpServer::run loop
+MtpServer::run fd: 47
+E:request read returned -1, errno: 22, exiting MtpServer::run loop
+MtpServer::run fd: 47
+E:request read returned -1, errno: 22, exiting MtpServer::run loop
+MtpServer::run fd: 47
+E:request read returned -1, errno: 22, exiting MtpServer::run loop
+MtpServer::run fd: 47
+E:request read returned -1, errno: 22, exiting MtpServer::run loop
 MtpServer::run fd: 47
 E:request read returned -1, errno: 22, exiting MtpServer::run loop
 MtpServer::run fd: 47
@@ -510,9 +545,14 @@ MtpServer::run fd: 47
 E:request read returned -1, errno: 22, exiting MtpServer::run loop
 MtpServer::run fd: 47
 E:request read returned -1, errno: 22, exiting MtpServer::run loop
+MtpServer::run fd: 47
+E:request read returned -1, errno: 22, exiting MtpServer::run loop
 I:Zip does not contain SELinux file_contexts file in its root.
 I:Legacy property environment initialized.
-Target: Huawei Y625-U32Target: Huawei Y625-U32
+Target: Huawei Y625-U32
+Target: Huawei Y625-U32detected filesystem ext4 for /dev/block/platform/msm_sdcc.1/by-name/system
+detected filesystem ext4 for /dev/block/platform/msm_sdcc.1/by-name/systemabout to run program [/tmp/install/bin/backuptool.sh] with 2 args
+run_program: child exited with status 127
 MtpServer::run fd: 47
 E:request read returned -1, errno: 22, exiting MtpServer::run loop
 MtpServer::run fd: 47
@@ -521,6 +561,10 @@ MtpServer::run fd: 47
 E:request read returned -1, errno: 22, exiting MtpServer::run loop
 MtpServer::run fd: 47
 E:request read returned -1, errno: 22, exiting MtpServer::run loop
+about to run program [/tmp/install/bin/otasigcheck.sh] with 1 args
+MtpServer::run fd: 47
+E:request read returned -1, errno: 22, exiting MtpServer::run loop
+Formatting and mounting system...Formatting and mounting system...
 Creating filesystem with parameters:
     Size: 1468006400
     Block size: 4096
@@ -701,203 +745,15 @@ MtpServer::run fd: 47
 E:request read returned -1, errno: 22, exiting MtpServer::run loop
 MtpServer::run fd: 47
 E:request read returned -1, errno: 22, exiting MtpServer::run loop
+detected filesystem ext4 for /dev/block/platform/msm_sdcc.1/by-name/systemdetected filesystem ext4 for /dev/block/platform/msm_sdcc.1/by-name/system
+about to run program [/tmp/install/bin/backuptool.sh] with 2 args
+Flashing boot image...Flashing boot image...
 MtpServer::run fd: 47
 E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-Installing boot image...
-Installing boot image...MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-Installation complete! You may now reboot.
-Installation complete! You may now reboot.script succeeded: result was [Installation complete! You may now reboot.]I:Legacy property environment disabled.
-MtpServer::run fd: 47
+Installation complete. You may now reboot.
+Installation complete. You may now reboot.script succeeded: result was [Installation complete. You may now reboot.]MtpServer::run fd: 47
 E:request read returned -1, errno: 22, exiting MtpServer::run loop
+I:Legacy property environment disabled.
 Updating partition details...
 I:Data backup size is 0MB, free: 2006MB.
 ...done
@@ -995,19 +851,61 @@ MtpServer::run fd: 47
 E:request read returned -1, errno: 22, exiting MtpServer::run loop
 MtpServer::run fd: 47
 E:request read returned -1, errno: 22, exiting MtpServer::run loop
-I:Set page: 'confirm_action'
 MtpServer::run fd: 47
 E:request read returned -1, errno: 22, exiting MtpServer::run loop
+MtpServer::run fd: 47
+E:request read returned -1, errno: 22, exiting MtpServer::run loop
+MtpServer::run fd: 47
+E:request read returned -1, errno: 22, exiting MtpServer::run loop
+MtpServer::run fd: 47
+E:request read returned -1, errno: 22, exiting MtpServer::run loop
+MtpServer::run fd: 47
+E:request read returned -1, errno: 22, exiting MtpServer::run loop
+MtpServer::run fd: 47
+E:request read returned -1, errno: 22, exiting MtpServer::run loop
+MtpServer::run fd: 47
+E:request read returned -1, errno: 22, exiting MtpServer::run loop
+MtpServer::run fd: 47
+E:request read returned -1, errno: 22, exiting MtpServer::run loop
+MtpServer::run fd: 47
+E:request read returned -1, errno: 22, exiting MtpServer::run loop
+MtpServer::run fd: 47
+E:request read returned -1, errno: 22, exiting MtpServer::run loop
+MtpServer::run fd: 47
+E:request read returned -1, errno: 22, exiting MtpServer::run loop
+MtpServer::run fd: 47
+E:request read returned -1, errno: 22, exiting MtpServer::run loop
+MtpServer::run fd: 47
+E:request read returned -1, errno: 22, exiting MtpServer::run loop
+MtpServer::run fd: 47
+E:request read returned -1, errno: 22, exiting MtpServer::run loop
+MtpServer::run fd: 47
+E:request read returned -1, errno: 22, exiting MtpServer::run loop
+MtpServer::run fd: 47
+E:request read returned -1, errno: 22, exiting MtpServer::run loop
+MtpServer::run fd: 47
+E:request read returned -1, errno: 22, exiting MtpServer::run loop
+MtpServer::run fd: 47
+E:request read returned -1, errno: 22, exiting MtpServer::run loop
+MtpServer::run fd: 47
+E:request read returned -1, errno: 22, exiting MtpServer::run loop
+MtpServer::run fd: 47
+E:request read returned -1, errno: 22, exiting MtpServer::run loop
+MtpServer::run fd: 47
+E:request read returned -1, errno: 22, exiting MtpServer::run loop
+MtpServer::run fd: 47
+E:request read returned -1, errno: 22, exiting MtpServer::run loop
+MtpServer::run fd: 47
+E:request read returned -1, errno: 22, exiting MtpServer::run loop
+MtpServer::run fd: 47
+E:request read returned -1, errno: 22, exiting MtpServer::run loop
+I:Set page: 'confirm_action'
 MtpServer::run fd: 47
 E:request read returned -1, errno: 22, exiting MtpServer::run loop
 MtpServer::run fd: 47
 E:request read returned -1, errno: 22, exiting MtpServer::run loop
 I:Set page: 'action_page'
 I:operation_start: 'Format'
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
 MtpServer::run fd: 47
 E:request read returned -1, errno: 22, exiting MtpServer::run loop
 Formatting cache using make_ext4fs function.
@@ -1025,35 +923,11 @@ Creating filesystem with parameters:
 Created filesystem with 11/6512 inodes and 1445/26009 blocks
 warning: wipe_block_device: Wipe via secure discard suppressed due to bug in EMMC firmware
 
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
 I:Recreating /cache/recovery folder.
 I:Copying file /etc/recovery.fstab to /cache/recovery/recovery.fstab
 I:Version number saved to '/cache/recovery/.version'
 Updating partition details...
 I:Data backup size is 0MB, free: 2006MB.
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
 ...done
 I:Set page: 'action_complete'
 I:operation_end - status=0
@@ -1066,10 +940,6 @@ Updating partition details...
 I:Data backup size is 0MB, free: 2006MB.
 ...done
 I:operation_end - status=0
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
 MtpServer::run fd: 47
 E:request read returned -1, errno: 22, exiting MtpServer::run loop
 I:Set page: 'clear_vars'
@@ -1091,14 +961,10 @@ MtpServer::run fd: 47
 E:request read returned -1, errno: 22, exiting MtpServer::run loop
 MtpServer::run fd: 47
 E:request read returned -1, errno: 22, exiting MtpServer::run loop
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
 I:Set page: 'advanced'
 MtpServer::run fd: 47
 E:request read returned -1, errno: 22, exiting MtpServer::run loop
 I:Set page: 'confirm_action'
-MtpServer::run fd: 47
-E:request read returned -1, errno: 22, exiting MtpServer::run loop
 MtpServer::run fd: 47
 E:request read returned -1, errno: 22, exiting MtpServer::run loop
 MtpServer::run fd: 47
